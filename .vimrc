@@ -14,6 +14,9 @@ au FileType julia set expandtab softtabstop=4
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" Insert closing brackets
+Plug 'jiangmiao/auto-pairs'
+
 call plug#end()
 
 set encoding=utf-8
@@ -50,10 +53,6 @@ set updatetime=800
 
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
-
-" Insert closing braces
-"inoremap { {}<Esc>ha
-inoremap { {<CR>}<Esc>ko
 
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
