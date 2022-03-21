@@ -14,6 +14,8 @@ au FileType julia set expandtab softtabstop=4
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+let $FZF_DEFAULT_COMMAND = "rg --files --hidden --glob '!.git/**'"
+
 " Insert closing brackets
 Plug 'jiangmiao/auto-pairs'
 
