@@ -40,8 +40,7 @@ map <silent> <C-p> <Esc>:Files<CR>
 map! <silent> <C-p> <Esc>:Files<CR>
 
 " Make <TAB> auto-select the first completion item
-inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<tab>"
 
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
@@ -51,3 +50,10 @@ set updatetime=800
 
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
+
+" Insert closing braces
+"inoremap { {}<Esc>ha
+inoremap { {<CR>}<Esc>ko
+
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
