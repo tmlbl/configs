@@ -3,6 +3,8 @@ call plug#begin('~/.vim/plugged')
 " Conquer of Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
 " Vim-Go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
